@@ -24,8 +24,8 @@ fi
 if git diff --name-only "$TRAVIS_COMMIT_RANGE" | sort -u | uniq | grep "$PROJECT" > /dev/null; then
 	# If there are differences, then change directory to $PROJECT.
 	cd "$PROJECT" && {
-		npx yarn install # Install dependencies.
-		npx yarn build # Build the project.
+		npx pnpm install # Install dependencies.
+		npx pnpm build # Build the project.
 		# npx yarn test # Run automated tests.
 	}
 else
