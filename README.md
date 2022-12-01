@@ -20,7 +20,7 @@ I also highly recommend [WebStorm IDE](https://www.jetbrains.com/webstorm/) for 
 - [Node.js](https://nodejs.org/en/)
 - [pnpm](https://pnpm.io/)
 - [Maven](https://maven.apache.org/)
-- [Java JDK 8](https://www.oracle.com/java/technologies/downloads/)
+- [Java JDK 18](https://www.oracle.com/java/technologies/downloads/)
 
 ## Running
 
