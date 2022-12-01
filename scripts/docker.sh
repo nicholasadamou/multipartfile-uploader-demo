@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECTS=('front-end' 'back-end')
+PROJECTS=('front-end' 'back-end' 'database')
 
 NETWORK="test"
 
@@ -9,9 +9,9 @@ if [ "$1" != "down" ]; then
 
 	for project in "${PROJECTS[@]}"; do
 		cd "$project" && {
-			docker-compose down --remove-orphans
-			docker-compose build
-			dock-compose up -d
+			docker compose down --remove-orphans
+			docker compose build
+			dock compose up -d
 			cd .. || exit
 		}
 	done
@@ -20,7 +20,7 @@ else
 
 	for project in "${PROJECTS[@]}"; do
 		cd "$project" && {
-			docker-compose down --remove-orphans
+			docker compose down --remove-orphans
 			cd .. || exit
 		}
 	done

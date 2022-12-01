@@ -1,6 +1,6 @@
-# Chunked File Upload (POC)
+# Multipart File Uploader Demo
 
-This project was developed with the intent of learning how to upload files in chunks.
+This project was developed with the intent of learning how to upload files in using Multipart Files.
 
 ## Assumptions
 
@@ -18,7 +18,7 @@ I also highly recommend [WebStorm IDE](https://www.jetbrains.com/webstorm/) for 
 
 - [Docker](http://docker.com/)
 - [Node.js](https://nodejs.org/en/)
-- [Yarn](https://yarnpkg.com/en/)
+- [pnpm](https://pnpm.io/)
 - [Maven](https://maven.apache.org/)
 - [Java JDK 8](https://www.oracle.com/java/technologies/downloads/)
 
@@ -29,7 +29,7 @@ From this directory build the project:
 ```bash
 # It will automatically install dependencies
 # prior to building the project.
-yarn build
+pnpm build
 ```
 
 ## Docker
@@ -39,7 +39,7 @@ From this directory execute the following command:
 ```bash
 # This will build each of the docker containers
 # and will spin them up in the background.
-yarn docker
+pnpm docker
 ```
 
 Give it a few minutes to bring up the [front-end](/front-end) container. `webpack` production builds can be slow.
