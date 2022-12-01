@@ -1,0 +1,35 @@
+server:
+  port: ${PORT:8080}
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}
+    url: ${DB_ADDRESS}
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${MAX_FILE_SiZE}
+      max-request-size: ${MAX_REQUEST_SIZE}
+      file-size-threshold: 0B
+      location: ${java.io.tmpdir}
+      resolve-lazily: false
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    com.nicholasadamou.upload.service: ${UPLOAD_SERVICE_LOG_LEVEL:INFO}
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS}

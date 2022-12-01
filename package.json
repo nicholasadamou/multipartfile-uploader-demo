@@ -1,0 +1,18 @@
+{
+	"name": "chunked-file-upload",
+	"version": "1.0.0",
+	"description": "The mono repo for containing the projects developed for the chunked file upload (POC).",
+	"scripts": {
+		"install-dependencies": "cd front-end && yarn install && cd ../back-end && mvn dependency:go-offline",
+		"prebuild": "yarn clean && yarn install-dependencies",
+		"build": "cd front-end && yarn build && cd ../back-end && mvn clean && mvn -e -U package -P docker",
+		"clean": "cd front-end && yarn clean && cd ../back-end && mvn clean",
+		"docker": "bash scripts/docker.sh",
+		"docker:down": "bash scripts/docker.sh down"
+	},
+	"author": "Nicholas Adamou",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/nicholasadamou/Chunked-File-Upload-POC"
+	}
+}

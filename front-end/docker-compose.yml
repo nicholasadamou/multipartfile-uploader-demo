@@ -1,0 +1,22 @@
+version: "3.8"
+
+networks:
+  test:
+    name: test
+
+services:
+  front-end:
+    container_name: front-end
+    hostname: front-end
+    image: font-end:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ".:/app"
+      - "/app/node_modules"
+    ports:
+      - "3001:3000"
+    networks:
+      - test
+    user: "1001:0"

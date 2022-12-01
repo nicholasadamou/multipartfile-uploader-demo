@@ -1,0 +1,28 @@
+# build dir
+dist
+
+# npm
+node_modules
+.npm
+.npmrc
+npm-debug.log*
+package-lock.json
+
+# flow
+flow-typed/npm
+
+# misc
+.DS_Store
+
+conf
+**/.DS_Store
+docker/**
+**/.env
+
+@carbon
+yarn.lock
+
+target
+
+dist/
+Makefile

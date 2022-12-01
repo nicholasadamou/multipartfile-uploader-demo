@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  front-end-prod:
+    container_name: front-end-prod
+    hostname: front-end-prod
+    image: font-end-prod:latest
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    ports:
+      - "1337:80"
+    user: "1001:0"

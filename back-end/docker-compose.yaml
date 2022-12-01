@@ -1,0 +1,34 @@
+version: '3.8'
+
+networks:
+  test:
+    name: test
+
+x-database-variables: &database-variables
+  DB_USER: ${DB_USER}
+  DB_PASSWORD: ${DB_PASSWORD}
+  DB_ADDRESS: ${DB_ADDRESS}
+
+x-request-variables: &request_variables
+  MAX_FILE_SIZE: ${MAX_FILE_SIZE}
+  MAX_REQUEST_SIZE: ${MAX_REQUEST_SIZE}
+
+x-security-options: &security_options
+  CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS}
+
+services:
+  upload-service:
+    build:
+      context: .
+    image: nicholasadamou/upload-service:latest
+    environment:
+      <<: *database-variables
+      <<: *request_variables
+      <<: *security_options
+    container_name: upload-service
+    hostname: upload-service
+    ports:
+      - "82:8080"
+    networks:
+      - test
+    user: "1001:0"
