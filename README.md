@@ -1,6 +1,6 @@
 # Multipart File Uploader Demo
 
-This project was developed with the intent of learning how to upload files in using Multipart Files.
+This project was developed with the intent of learning how to upload files using Multipart Files.
 
 ## Assumptions
 
